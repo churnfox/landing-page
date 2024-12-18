@@ -1,5 +1,5 @@
 "use client";
-import productImage from "@/assets/dashboard.png";
+import productImage from "@/assets/Components.png";
 import starImage from "@/assets/star_blue.png";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -11,7 +11,7 @@ import CheckIcon from "@/assets/check.svg";
 
 const pricingTiers = [
   {
-    title: "1. Listen",
+    title: "1. Listen: AI-Powered Brand Monitoring",
     monthlyPrice: 0,
     buttonText: "Get started for free",
     popular: false,
@@ -27,7 +27,7 @@ const pricingTiers = [
     ],
   },
   {
-    title: "2. Learn",
+    title: "2. Learn: Transform Feedback into Insights",
     monthlyPrice: 9,
     buttonText: "Sign up now",
     popular: false,
@@ -45,7 +45,7 @@ const pricingTiers = [
     ],
   },
   {
-    title: "3. Leverage",
+    title: "3. Leverage: Drive Actionable Growth",
     monthlyPrice: 19,
     buttonText: "Sign up now",
     popular: false,
@@ -76,13 +76,25 @@ export const ProductShowcase = () => {
           <Image src={productImage} alt="Product Image" className="size-9/12" />
         </div>
 
-        <div className="section-heading pt-5">
+        <div className="md:w-full md:flex px-20 md:items-center md:justify-center pt-10">
           {/* <div className="flex justify-center">
             <div className="tag">Boost your productivity</div>
           </div> */}
-          <p className="section-description">
+          {/* <p className="section-description">
             Every interaction matters - gather intel from social media, customer reviews, and support tickets in one unified view. Keep tabs on competitors and track custom keywords to stay ahead of market trends. Spot viral conversations early with smart hashtag monitoring that keeps you in the loop.
-          </p>
+          </p> */}
+          <div className="flex flex-col items-center pb-5 md:pb-0 md:items-start md:justify-start md:w-[33%] md:pl-5 border-solid border-l-2 border-[#490f74]">
+            <p className="text-lg text-[#490f74]"><strong>Track Keywords</strong></p>
+            <p className="w-[70%] text-sm text-black/75">Monitor keywords on social media, forums, news sites, podcasts, and more to stay on top of relevant conversations.</p>
+          </div>
+          <div className="flex flex-col items-center pb-5 md:pb-0 md:items-start md:justify-start md:w-[33%] md:pl-5 border-solid border-l-2 border-[#490f74] ">
+            <p className="text-lg text-[#490f74]"><strong>Analyze Reach</strong></p>
+            <p className="w-[70%] text-sm text-black/75">Measure the success of hashtag campaigns, discover top influencers, and analyze reach and engagement metrics.</p>
+          </div>
+          <div className="flex flex-col items-center pb-5 md:pb-0 md:items-start md:justify-start md:w-[33%] md:pl-5 border-solid border-l-2 border-[#490f74] ">
+            <p className="text-lg text-[#490f74]"><strong>Generate Reports</strong></p>
+            <p className="w-[70%] text-sm text-black/75">Create quick, downloadable reports with actionable insights, trending keywords & hashtags, and performance data.</p>
+          </div>
         </div>
 
         {/* <div className='md:flex items-center pt-14 pb-24'>
@@ -107,9 +119,10 @@ export const ProductShowcase = () => {
 
 
         <div className="section-heading">
-          <h2 className="section-title pt-52">
+          <h2 className="section-title pt-48">
             A smarter way to understand your customers
           </h2>
+          <p className="section-description py-5">Our AI-powered platform transforms thousands of customer mentions and reviews into structured themes, giving you a clear view of what matters most.</p>
         </div>
         <div className="md:flex items-center pt-8">
           <div className="flex flex-col gap-6 items-center md:items-end md:justify-end md:w-[548px]">
@@ -117,15 +130,18 @@ export const ProductShowcase = () => {
               "card"
             )}
             >
-              <p className="text-base py-4 flex items-center">
-                &#8226; Our AI-powered insights platform turns thousands of customer mentions and reviews into clear, structured themes. Instantly see the size and impact of each theme.
-              </p>
-              <p className="text-base py-4 flex items-center">
-                &#8226; Each theme comes with an AI-generated summary highlighting key evidence, opportunities, and actionable recommendations.
-              </p>
-              <p className="text-base py-4 flex items-center">
-                &#8226; Explore the evidence behind each theme with ease. Access original feedback and customer quotes instantly by a direct link.
-              </p>
+              <div className="flex flex-col items-center pb-5 md:pb-0 md:my-5 md:items-start md:justify-start md:pl-5 border-solid border-l-2 border-[#490f74]">
+                <p className="text-lg text-[#490f74]"><strong>Themes and Impact</strong></p>
+                <p className="w-[70%] text-sm text-black/75">Quickly identify the most critical themes and understand their influence on your brand.</p>
+              </div>
+              <div className="flex flex-col items-center pb-5 md:pb-0 md:my-5 md:items-start md:justify-start md:pl-5 border-solid border-l-2 border-[#490f74] ">
+                <p className="text-lg text-[#490f74]"><strong>AI Summaries</strong></p>
+                <p className="w-[70%] text-sm text-black/75">Get concise summaries with key insights, evidence, and opportunities for growth, complete with actionable recommendations.</p>
+              </div>
+              <div className="flex flex-col items-center pb-5 md:pb-0 md:my-5 md:items-start md:justify-start md:pl-5 border-solid border-l-2 border-[#490f74] ">
+                <p className="text-lg text-[#490f74]"><strong>Explore Evidence</strong></p>
+                <p className="w-[70%] text-sm text-black/75">Dive into the details behind each theme. Access original feedback and customer quotes with direct links — all in one place.</p>
+              </div>
             </div>
           </div>
           <Image src={insightsImage} alt="Insights" className="flex md:items-start md:justify-start md:size-8/12" />
@@ -161,12 +177,12 @@ export const ProductShowcase = () => {
                 >
                   <div key={index} className="flex justify-between">
                     <h3
-                      className="text-2xl font-bold text-purple-700"
+                      className="text-2xl font-bold text-[#490f74] pb-1"
                     >
                       {title}
                     </h3>
                   </div>
-                  <p className="text-base flex items-center">{desc}</p>
+                  {/* <p className="text-base flex items-center">{desc}</p> */}
                   <ul className="flex flex-col lg:w-200">
                     {features.map((feature, index) => (
                       <li key={index} className="text-base flex items-center">

@@ -50,15 +50,15 @@ export const CallToAction = () => {
       },
       body: JSON.stringify(data),
     }).then((response) => response.json())
-    .then((data) => {
-      setWaitlistData(data);
-      setLoading(false);
-      setWaitlistSuccess(true);
-    })
-    .catch((error) => {
-      setLoading(false);
-      setError("An error occurred. Please try again later.");
-    });
+      .then((data) => {
+        setWaitlistData(data);
+        setLoading(false);
+        setWaitlistSuccess(true);
+      })
+      .catch((error) => {
+        setLoading(false);
+        setError("An error occurred. Please try again later.");
+      });
   }
 
   return (
@@ -70,7 +70,7 @@ export const CallToAction = () => {
         <div className="section-heading relative">
           <h2 className="section-title py-2">Ready to turn insights into growth?</h2>
           <p className="section-description mt-5">
-            Unlock the power of customer insights with our AI-driven platform. Get actionable recommendations, monitor reviews, and schedule detailed reports - all in one place.
+            Join our waitlist and get exclusive early access to AI-powered analytics! We’ve got more in store, and you won’t want to miss it. Secure your spot now and be ahead of the curve.
           </p>
           <motion.img
             src={starImage.src}
@@ -118,7 +118,7 @@ export const CallToAction = () => {
               {/* @ts-ignore */}
               {waitlistSuccess && <p className="text-green-800">Thank you for joining the waitlist! You are #{waitlistData.priority} in line.</p>}
               <div className="pt-5">
-                <button disabled={waitlistSuccess || loading} className="btn btn-primary text-lg px-5" onClick={() => {submitWaitlist({email: email})}}>
+                <button disabled={waitlistSuccess || loading} className="btn btn-primary text-lg px-5" onClick={() => { submitWaitlist({ email: email }) }}>
                   {loading ? "Joining..." : "Join Waitlist"}
                 </button>
               </div>

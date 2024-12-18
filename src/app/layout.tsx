@@ -6,7 +6,7 @@ import clsx from "clsx";
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Consumr",
+  title: "Churnfox",
   description: "Track mentions, analyze sentiment, and uncover insights.",
 };
 

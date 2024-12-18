@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import ArrowRight from "@/assets/arrow-right.svg";
-import Logo from "@/assets/consumr_logo.png";
+import Logo from "@/assets/churnFox.png";
 import Image from "next/image";
 import MenuIcon from "@/assets/menu.svg";
 
@@ -30,7 +30,9 @@ export const Header = () => {
       <div className="py-5">
         <div className="container">
           <div className="flex items-center justify-between">
-            <Image src={Logo} alt="Consumr Logo" height={40} width={40} />
+            <div style={{ cursor: 'pointer' }}>
+              <Image onClick={() => window?.scrollTo(0, 0)} src={Logo} alt="Churnfox Logo" height={40} width={40} />
+            </div>
             <button
               className="md:hidden p-2"
               onClick={toggleMenu}
