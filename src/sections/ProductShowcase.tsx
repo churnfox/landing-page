@@ -124,7 +124,7 @@ export const ProductShowcase = () => {
           </h2>
           <p className="section-description py-5">Our AI-powered platform transforms thousands of customer mentions and reviews into structured themes, giving you a clear view of what matters most.</p>
         </div>
-        <div className="md:flex items-center pt-8">
+        <div className="md:flex items-center pt-8 pb-24">
           <div className="flex flex-col gap-6 items-center md:items-end md:justify-end md:w-[548px]">
             <div className={twMerge(
               "card"
@@ -147,7 +147,7 @@ export const ProductShowcase = () => {
           <Image src={insightsImage} alt="Insights" className="flex md:items-start md:justify-start md:size-8/12" />
         </div>
 
-        <div id="Features" className="section-heading pt-48">
+        <div id="Features" className="section-heading pt-24">
           <h2 className="section-title">How it works</h2>
           {/* <p className="section-description mt-5">
             Free forever. Upgrade for unlimited tasks, better security, and
@@ -177,7 +177,7 @@ export const ProductShowcase = () => {
                 >
                   <div key={index} className="flex justify-between">
                     <h3
-                      className="text-2xl font-bold text-[#490f74] pb-1"
+                      className="text-lg font-bold text-[#490f74] pb-1"
                     >
                       {title}
                     </h3>
@@ -186,8 +186,8 @@ export const ProductShowcase = () => {
                   <ul className="flex flex-col lg:w-200">
                     {features.map((feature, index) => (
                       <li key={index} className="text-base flex items-center">
-                        <CheckIcon className="h-4 w-4 inline-flex justify-center items-center mr-3" />
-                        <p className="flex items-center">{feature}</p>
+                        <CheckIcon className="h-3 w-3 inline-flex justify-center items-center mr-3" />
+                        <p className="flex items-center text-sm text-black/75">{feature}</p>
                       </li>
                     ))}
                   </ul>
