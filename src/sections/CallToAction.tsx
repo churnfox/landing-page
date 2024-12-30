@@ -5,6 +5,7 @@ import springImage from "@/assets/spring.png";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
+import { Zap } from "lucide-react";
 
 export const CallToAction = () => {
   const sectionRef = useRef(null);
@@ -62,43 +63,23 @@ export const CallToAction = () => {
   }
 
   return (
-    <section
-      ref={sectionRef}
-      className="bg-gradient-to-b from-white to-[#D2DCFF] py-24 overflow-x-clip"
-    >
-      <div className="container" id="waitlist">
-        <div className="section-heading relative">
-          <h2 className="section-title py-2">Ready to turn insights into growth?</h2>
-          <p className="section-description mt-5">
-            Join our waitlist and get exclusive early access to AI-powered analytics! We’ve got more in store, and you won’t want to miss it. Secure your spot now and be ahead of the curve.
-          </p>
-          <motion.img
-            src={starImage.src}
-            alt="Star Image"
-            width={360}
-            className="absolute -left-[350px] -top-[137px]"
-            style={{
-              translateY,
-            }}
-          />
-          <motion.img
-            src={springImage.src}
-            alt="Spring Image"
-            width={360}
-            className="absolute -right-[331px] -top-[19px]"
-            style={{
-              translateY,
-            }}
-          />
+    <section id="waitlist" className="bg-black py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-4xl font-bold text-white mb-6">
+          Retain More Customers with Churnfox
+        </h2>
+        <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+          Churnfox leverages AI-driven analysis to process reviews, feedback, and customer data, pinpointing churn triggers and retention opportunities. Get actionable insights to optimize customer experience and boost loyalty.
+        </p>
+        <div className="inline-flex items-center bg-purple-600/10 rounded-full px-6 py-3 mb-8">
+          <Zap className="h-5 w-5 text-purple-600 mr-2" />
+          <span className="text-gray-300">Get insights 3x faster than traditional analysis methods.</span>
         </div>
         <div className="flex gap-2 mt-10 justify-center">
-          <form onSubmit={(e) => e.preventDefault()} className="py-10">
+          <form onSubmit={(e) => e.preventDefault()}>
             <div className="flex flex-col items-center justify-center gap-2">
-              <label htmlFor="email" className="section-description">
-                <strong>Get insights 3x faster than traditional analysis methods.</strong>
-              </label>
-              <label htmlFor="email" className="section-description text-purple-800">
-                First 50 waitlist members get 50% lifetime discount!
+              <label htmlFor="email" className="section-description text-purple-400">
+                <strong>First 50 waitlist members get 50% lifetime discount!</strong>
               </label>
               <input
                 id="email"
@@ -113,12 +94,15 @@ export const CallToAction = () => {
                   setEmail(e.target.value);
                   setError('');
                 }}
+                style={{
+                  backgroundColor: waitlistSuccess ? "purple-600" : "transparent",
+                }}
               />
               {error && <p className="text-red-500">{error}</p>}
               {/* @ts-ignore */}
-              {waitlistSuccess && <p className="text-green-800">Thank you for joining the waitlist! You are #{waitlistData.priority} in line.</p>}
+              {waitlistSuccess && <p className="text-green-300">Thank you for joining the waitlist! You are #{waitlistData.priority} in line.</p>}
               <div className="pt-5">
-                <button disabled={waitlistSuccess || loading} className="btn btn-primary text-lg px-5" onClick={() => { submitWaitlist({ email: email }) }}>
+                <button disabled={waitlistSuccess || loading} className="bg-purple-600 text-white px-8 py-4 rounded-lg hover:bg-purple-600 transition-colors text-lg font-semibold" onClick={() => { submitWaitlist({ email: email }) }}>
                   {loading ? "Joining..." : "Join Waitlist"}
                 </button>
               </div>

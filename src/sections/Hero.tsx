@@ -19,45 +19,53 @@ export const Hero = () => {
     'Competitor Analysis',
   ]
 
-  return <section className='pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#CD88FF,#EAEEFE_100%)] overflow-x-clip'>
-    <div className="container">
-      <div className='md:flex items-center'>
-        <div className='md:w-full'>
-          <div className='flex items-center justify-center'>
-            <div className="text-sm inline-flex border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight">
-              <strong className='text-purple-700'>
-                <Typewriter
-                  options={{
-                    strings: textOptions,
-                    autoStart: true,
-                    loop: true,
-                    deleteSpeed: 20,
-                    delay: 50,
-                    // @ts-ignore
-                    pauseFor: 750
-                  }}
-                />
-              </strong>
-            </div>
-          </div>
-          <h1 className="text-5xl md:text-5xl text-center font-bold tracking-tighter py-2 bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6">Track, Analyze, and Optimize Your Brand Reputation</h1>
-          {/* Smarter decisions powered by AI */}
-          <p className="text-lg text-[#010D3E] tracking-tight text-center mt-6">Monitor brand mentions across social media, news, blogs, and reviews — with AI-powered insights and actionable recommendations.</p>
-          <div className="flex gap-1 items-center justify-center mt-[30px]">
-            <button className="btn">
-              <a href="#waitlist">Join Waitlist</a>
-            </button>
-            {/* <button className="btn btn-text gap-1">
-              <span>Learn more</span>
-              <ArrowIcon className="h-5 w-5" />
-            </button> */}
+  return <div className="relative overflow-hidden bg-black pt-32 pb-20">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col lg:flex-col items-center justify-between gap-12">
+        {/* Left Content */}
+        <div className="text-sm inline-flex border border-purple-900 px-3 py-1 rounded-lg tracking-tight">
+          <strong className='text-pink-200'>
+            <Typewriter
+              options={{
+                strings: textOptions,
+                autoStart: true,
+                loop: true,
+                deleteSpeed: 20,
+                delay: 50,
+                // @ts-ignore
+                pauseFor: 750
+              }}
+            />
+          </strong>
+        </div>
+        <div className="text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Your Customers are talking!
+            <span className="block text-purple-600">Are you listening?</span>
+          </h1>
+          <p className="text-xl text-gray-400 mb-8 max-w-3xl">
+            Your AI copilot for customer insights. Capture and analyze every
+            conversation, from social media to support tickets, automatically.
+          </p>
+          <div className="sm:flex-row gap-4">
+            <a
+              href="#waitlist"
+              className="inline-flex justify-center items-center px-8 py-4 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-600 transition-colors"
+            >
+              Join Waitlist Now
+            </a>
           </div>
         </div>
-        {/* <div className='mt-20 md:mt-0 md:h-[648px] md:flex-1 relative'>
-          <Image src={cogImage} alt='Cog image' className='hidden md:block md:absolute md:h-full md:w-auto md:max-w-none md:-left-6 lg:left-0' />
-          <Image src={noodleImage} width={220} alt="noodle image" className='hidden lg:block absolute top-[524px] left-[448px] rotate-[30deg]' />
-        </div> */}
+
+        {/* Right Decorative Illustration
+           <div className="relative w-28 h-28 md:w-20 md:h-20">
+            <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-500 rounded-lg blur-xl opacity-50 animate-pulse transform rotate-45" />
+            <div className="absolute inset-4 bg-gradient-to-tr from-yellow-600 via-pink-600 to-purple-600 rounded-lg transform rotate-45" />
+          </div> */}
       </div>
     </div>
-  </section>
+
+    {/* Background Overlay */}
+    {/* <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1603665301175-57ba46f392bf')] opacity-20" />     */}
+  </div>
 };
